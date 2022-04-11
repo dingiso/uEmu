@@ -135,3 +135,4 @@ pluginsConfig.AFLFuzzer = {
 	{% endif %}
 }
 {% endif %}
+add_plugin("DmaEthMonitor")

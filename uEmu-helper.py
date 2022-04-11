@@ -14,7 +14,7 @@ DEFAULT_TEMPLATES_DIR = os.getcwd()
 def read_config(cfg_f, mode, cachefilename, firmwarename, debug, testcasename):
     if not os.path.isfile(cfg_f):
         sys.exit("Cannot find the specified configuration file: %s" % cfg_f)
-    parser = configparser.SafeConfigParser()
+    parser = configparser.ConfigParser()
     parser.read(cfg_f)
 
     # Prepare the target firmware lua configuration
@@ -183,7 +183,8 @@ def main(argv):
         'firmware': args.firmware,
         'root_dir': os.environ['uEmuDIR'],
     }
-    render_template(launch, "launch-uEmu-template.sh", "launch-uEmu.sh", executable=True)
+    ShFile="launch-uEmu-"+args.firmware.split("/")[-1].split(".")[0]+".sh"
+    render_template(launch, "launch-uEmu-template.sh",ShFile, executable=True)
 
 
 if __name__ == "__main__":
