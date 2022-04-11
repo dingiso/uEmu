@@ -76,7 +76,7 @@ The μEmu source code can be obtained from the my git repository using the follo
 
 ```console
  export uEmuDIR=/home/user/uEmu  # uEmuDIR must be in your home folder (e.g., /home/user/uEmu)
- sudo apt-get install git-repo   # or follow instructions at https://gerrit.googlesource.com/git-repo/
+ sudo apt-get install repo   # or follow instructions at https://gerrit.googlesource.com/git-repo/
  cd $uEmuDIR
  repo init -u https://github.com/MCUSec/manifest.git -b uEmu
  repo sync
