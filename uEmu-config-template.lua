@@ -71,10 +71,10 @@ add_plugin("PeripheralModelLearning")
 pluginsConfig.PeripheralModelLearning = {
 	useKnowledgeBase = {{ mode }},
 	useFuzzer = {{ enable_fuzz }},
-	limitSymNum = {{ t3_max_symbolic_count }},
-	maxT2Size = {{ t2_max_context }},
-	{% if enable_fuzz == "true" %}allowNewPhs = {{ allow_new_phs }},
-	{% else %}allowNewPhs = true,{% endif %}
+--	limitSymNum = {{ t3_max_symbolic_count }},
+--	maxT2Size = {{ t2_max_context }},
+--	{% if enable_fuzz == "true" %}allowNewPhs = {{ allow_new_phs }},
+--	{% else %}allowNewPhs = true,{% endif %}
 	{% if mode == "true" %}autoModeSwitch = {{ allow_auto_mode_switch }},
 	{% else %}autoModeSwitch = false,{% endif %}
 	enableExtendedInterruptMode = "true",
@@ -135,4 +135,8 @@ pluginsConfig.AFLFuzzer = {
 	{% endif %}
 }
 {% endif %}
+
 add_plugin("DmaEthMonitor")
+pluginsConfig.DmaEthMonitor = {
+	useFuzzer = {{ enable_fuzz }},
+}
